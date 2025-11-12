@@ -37,7 +37,9 @@ jobs:
             latest=true
           tags: |
             type=ref,event=branch
-            type=semver,pattern=v{major}.{minor}.{patch}
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
 
       - name: Build and push image
         id: push
